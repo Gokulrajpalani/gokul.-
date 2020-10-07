@@ -1,0 +1,47 @@
+ 
+public class Twoarraysrequalornot {
+	static void sort(int arr[],int n)
+	{
+		for(int i=0;i<n-1;i++)
+		{
+			for(int j=0;j<n-i-1;j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+				int temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+				}
+			}
+		}
+	
+	}
+static int array(int arr1[],int arr2[],int n,int m)
+{
+	int count=0;
+	sort(arr1,n);
+	sort(arr2,m);
+	for(int i=0;i<n;i++)
+	{
+		if(arr1[i]==arr2[i])
+		{
+			count++;
+		}
+	}
+	return count;
+}
+	public static void main(String[] args) {
+	int n=5,m=5;	
+int []arr1={10,2,1,5,87};
+int []arr2={87,10,2,1,5};
+if(array(arr1,arr2,n,m)==n)
+{
+	System.out.print("same");
+}
+else
+{
+	System.out.print("not same")  ;
+	}
+
+}
+}
